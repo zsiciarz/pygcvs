@@ -1,0 +1,7 @@
+[report]
+omit =
+    pygcvs/__init__.py
+    .tox/*
+    ../src/*
+    ../lib/*
+    */test*
