@@ -24,13 +24,40 @@ class GcvsParser(object):
         for row in self.reader:
             if len(row) != 15:
                 continue
-            yield self.row_to_dict(row)
+            try:
+                yield self.row_to_dict(row)
+            except Exception:
+                logger.exception("Error in row: %s", row)
+                continue
 
     def row_to_dict(self, row):
         """
-        TODO
+        Converts a raw GCVS record to a dictionary of star data.
         """
-        return {}
+        name = row[1][:9]
+        name = ' '.join(name.split()).upper()
+        variable_type = row[3].strip()
+        mag_symbol = row[4][0].strip()
+        max_magnitude = row[4][1:6].strip()
+        max_magnitude = float(max_magnitude) if max_magnitude else None
+        mag_symbol = row[5][0].strip()
+        min_magnitude = row[5][1:6].strip()
+        min_magnitude = float(min_magnitude) if min_magnitude else None
+        if mag_symbol == '(' and max_magnitude is not None:
+            # this is actually amplitude
+            min_magnitude = max_magnitude + min_magnitude
+        epoch = row[8][:10].strip()
+        epoch = 2400000.0 + float(epoch) if epoch else None
+        period = row[10][1:17].strip()
+        period = float(period) if period else None
+        return {
+            'name': name,
+            'variable_type': variable_type,
+            'max_magnitude': max_magnitude,
+            'min_magnitude': min_magnitude,
+            'epoch': epoch,
+            'period': period,
+        }
 
     def parse_magnitude(self, magnitude_str):
         """
