@@ -75,3 +75,19 @@ class GcvsParserTestCase(unittest.TestCase):
         epoch_str = '            '
         epoch = self.parser.parse_epoch(epoch_str)
         self.assertIsNone(epoch)
+
+    def test_parse_period(self):
+        """
+        Check that the period field parses correctly.
+        """
+        period_str = '    23.285213       '
+        period = self.parser.parse_period(period_str)
+        self.assertAlmostEqual(period, 23.285213)
+
+    def test_parse_empty_period(self):
+        """
+        Check that empty period normalizes to None.
+        """
+        period_str = '                    '
+        period = self.parser.parse_period(period_str)
+        self.assertIsNone(period)
