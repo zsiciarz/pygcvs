@@ -8,6 +8,7 @@ A Python library for reading variable star data from the
 Resources
 ---------
 
+ * `Documentation <http://pygcvs.rtfd.org>`_
  * `Issue tracker <https://github.com/zsiciarz/pygcvs/issues>`_
 
 Author
