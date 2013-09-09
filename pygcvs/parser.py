@@ -22,6 +22,8 @@ class GcvsParser(object):
 
     def __iter__(self):
         for row in self.reader:
+            if len(row) != 15:
+                continue
             yield self.row_to_dict(row)
 
     def row_to_dict(self, row):
