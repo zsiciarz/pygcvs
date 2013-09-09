@@ -37,13 +37,9 @@ class GcvsParser(object):
         name = row[1][:9]
         name = ' '.join(name.split()).upper()
         variable_type = row[3].strip()
-        mag_symbol = row[4][0].strip()
-        max_magnitude = row[4][1:6].strip()
-        max_magnitude = float(max_magnitude) if max_magnitude else None
-        mag_symbol = row[5][0].strip()
-        min_magnitude = row[5][1:6].strip()
-        min_magnitude = float(min_magnitude) if min_magnitude else None
-        if mag_symbol == '(' and max_magnitude is not None:
+        max_magnitude, symbol = self.parse_magnitude(row[4])
+        min_magnitude, symbol = self.parse_magnitude(row[5])
+        if symbol == '(' and max_magnitude is not None:
             # this is actually amplitude
             min_magnitude = max_magnitude + min_magnitude
         epoch = row[8][:10].strip()
@@ -63,7 +59,10 @@ class GcvsParser(object):
         """
         Converts magnitude field to a float value, or ``None`` if GCVS does
         not list the magnitude.
+
+        Returns a tuple (magnitude, symbol), where symbol can be either an
+        empty string or a single character - one of '<', '>', '('.
         """
-        mag_symbol = magnitude_str[0].strip()
+        symbol = magnitude_str[0].strip()
         magnitude = magnitude_str[1:6].strip()
-        return float(magnitude) if magnitude else None
+        return float(magnitude) if magnitude else None, symbol
