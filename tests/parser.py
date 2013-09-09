@@ -42,3 +42,20 @@ class GcvsParserTestCase(unittest.TestCase):
         magnitude_str = '         '
         magnitude, symbol = self.parser.parse_magnitude(magnitude_str)
         self.assertIsNone(magnitude)
+
+    def test_parse_name_spaces(self):
+        """
+        Check that multiple spaces between star name and constellation name
+        collapse to one space.
+        """
+        name_str = 'VY    AND  '
+        name = self.parser.parse_name(name_str)
+        self.assertEqual(name, 'VY AND')
+
+    def test_parse_name_uppercase(self):
+        """
+        Check that normalized star name is always uppercase.
+        """
+        name_str = 'VY    And  '
+        name = self.parser.parse_name(name_str)
+        self.assertEqual(name, 'VY AND')
