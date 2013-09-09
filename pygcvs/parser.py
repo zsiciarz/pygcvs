@@ -9,6 +9,18 @@ logger = logging.getLogger(__name__)
 class GcvsParser(object):
     """
     A parser for GCVS data format.
+
+    Example usage:
+
+        >>> with open('iii.dat', 'rb') as fp:
+        ...     parser = GcvsParser(fp)
+        ...     for star in parser:
+        ...         print(star['name'])
+        R AND
+        S AND
+        #...
+        V0515 VUL
+        V0516 VUL
     """
 
     def __init__(self, fp):
