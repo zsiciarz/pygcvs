@@ -7,4 +7,7 @@ logger = logging.getLogger(__name__)
 
 
 class GcvsParser(object):
-    pass
+    def parse_magnitude(self, magnitude_str):
+        mag_symbol = magnitude_str[0].strip()
+        magnitude = magnitude_str[1:6].strip()
+        return float(magnitude) if magnitude else None
