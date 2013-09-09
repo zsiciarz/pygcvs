@@ -59,3 +59,19 @@ class GcvsParserTestCase(unittest.TestCase):
         name_str = 'VY    And  '
         name = self.parser.parse_name(name_str)
         self.assertEqual(name, 'VY AND')
+
+    def test_parse_epoch(self):
+        """
+        Check that epoch has 24... prefix.
+        """
+        epoch_str = '34618.185   '
+        epoch = self.parser.parse_epoch(epoch_str)
+        self.assertAlmostEqual(epoch, 2434618.185)
+
+    def test_parse_empty_epoch(self):
+        """
+        Check that empty epoch normalizes to None.
+        """
+        epoch_str = '            '
+        epoch = self.parser.parse_epoch(epoch_str)
+        self.assertIsNone(epoch)
