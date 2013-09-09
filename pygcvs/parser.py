@@ -54,8 +54,7 @@ class GcvsParser(object):
             # this is actually amplitude
             min_magnitude = max_magnitude + min_magnitude
         epoch = self.parse_epoch(row[8])
-        period = row[10][1:17].strip()
-        period = float(period) if period else None
+        period = self.parse_period(row[10])
         return {
             'name': name,
             'variable_type': variable_type,
@@ -91,3 +90,11 @@ class GcvsParser(object):
         """
         epoch = epoch_str[:10].strip()
         return 2400000.0 + float(epoch) if epoch else None
+
+    def parse_period(self, period_str):
+        """
+        Converts period field to a float value or ``None`` if there is
+        no period in GCVS record.
+        """
+        period = period_str[1:17].strip()
+        return float(period) if period else None
