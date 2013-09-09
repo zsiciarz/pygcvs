@@ -34,3 +34,11 @@ class GcvsParserTestCase(unittest.TestCase):
         magnitude_str = ' 12.2    '
         magnitude, symbol = self.parser.parse_magnitude(magnitude_str)
         self.assertAlmostEqual(magnitude, 12.2)
+
+    def test_parse_empty_magnitude(self):
+        """
+        Check that empty magnitude field parses to None.
+        """
+        magnitude_str = '         '
+        magnitude, symbol = self.parser.parse_magnitude(magnitude_str)
+        self.assertIsNone(magnitude)
