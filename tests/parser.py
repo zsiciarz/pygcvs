@@ -23,12 +23,14 @@ class GcvsParserTestCase(unittest.TestCase):
         """
         Check that magnitude value without any flags is parsed correctly.
         """
-        magnitude = '  8.45   '
-        self.assertAlmostEqual(self.parser.parse_magnitude(magnitude), 8.45)
+        magnitude_str = '  8.45   '
+        magnitude, symbol = self.parser.parse_magnitude(magnitude_str)
+        self.assertAlmostEqual(magnitude, 8.45)
 
     def test_parse_two_digit_magnitude(self):
         """
         Check that first digit of magnitude is not stripped away.
         """
-        magnitude = ' 12.2    '
-        self.assertAlmostEqual(self.parser.parse_magnitude(magnitude), 12.2)
+        magnitude_str = ' 12.2    '
+        magnitude, symbol = self.parser.parse_magnitude(magnitude_str)
+        self.assertAlmostEqual(magnitude, 12.2)
