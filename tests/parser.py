@@ -91,3 +91,22 @@ class GcvsParserTestCase(unittest.TestCase):
         period_str = '                    '
         period = self.parser.parse_period(period_str)
         self.assertIsNone(period)
+
+    def test_row_to_dict_simple(self):
+        """
+        Check that row_to_dict returns correct data for row.
+        """
+        row = "320031 |TX    Del *|205012.7+033908 |CWB:      |  8.84   |   9.54     |            |V |42947.009   |     |     6.165907       |33   |G0-G5            |08632 08953|".split('|')
+        data = self.parser.row_to_dict(row)
+        self.assertEqual(data['name'], 'TX DEL')
+        self.assertEqual(data['variable_type'], 'CWB:')
+        self.assertAlmostEqual(data['epoch'], 2442947.009)
+        self.assertAlmostEqual(data['period'], 6.165907)
+
+    def test_amplitude_to_magnitude(self):
+        """
+        Check that amplitude is correctly converted to min magnitude.
+        """
+        row = "869001 |alf   Vir *|132511.6-110941 |ELL+BCEP  |  0.95   |(  0.10    )|(  0.08    )|V |19530.49    |     |     4.014604       |     |B1III-IV+B2V     |04627 BD   |".split('|')
+        data = self.parser.row_to_dict(row)
+        self.assertAlmostEqual(data['min_magnitude'], 1.05)
