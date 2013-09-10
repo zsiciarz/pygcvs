@@ -34,12 +34,15 @@ at a time. See below::
     V0515 VUL
     V0516 VUL
 
+See :doc:`usage` for more usage examples.
+
 Contents
 ========
 
 .. toctree::
    :maxdepth: 4
 
+   usage
    reference
 
 
