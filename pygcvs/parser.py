@@ -47,6 +47,7 @@ class GcvsParser(object):
         Converts a raw GCVS record to a dictionary of star data.
         """
         name = self.parse_name(row[1])
+        ra, dec = self.parse_coordinates(row[2])
         variable_type = row[3].strip()
         max_magnitude, symbol = self.parse_magnitude(row[4])
         min_magnitude, symbol = self.parse_magnitude(row[5])
@@ -57,6 +58,8 @@ class GcvsParser(object):
         period = self.parse_period(row[10])
         return {
             'name': name,
+            'ra': ra,
+            'dec': dec,
             'variable_type': variable_type,
             'max_magnitude': max_magnitude,
             'min_magnitude': min_magnitude,
