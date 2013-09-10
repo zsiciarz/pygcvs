@@ -10,6 +10,30 @@ pygcvs
 A Python library for reading variable star data from the
 `General Catalog of Variable Stars <http://www.sai.msu.su/gcvs/gcvs/iii/html/>`_.
 
+Installation
+============
+
+Installing **pygcvs** is easy, just use pip::
+
+    pip install pygcvs
+
+Usage
+=====
+
+Download the ``iii.dat`` file from `GCVS <http://www.sai.msu.su/gcvs/gcvs/iii/>`_
+and point the :func:`~pygcvs.__init__.read_gcvs` function at it's location.
+The function returns a generator which yields a single star data dictionary
+at a time. See below::
+
+    >>> import pygcvs
+    >>> for star in pygcvs.read_gcvs('iii.dat'):
+    ...     print(star['name'])
+    R AND
+    S AND
+    #...
+    V0515 VUL
+    V0516 VUL
+
 Contents
 ========
 
