@@ -21,7 +21,7 @@ Usage
 =====
 
 Download the ``iii.dat`` file from `GCVS <http://www.sai.msu.su/gcvs/gcvs/iii/>`_
-and point the :func:`~pygcvs.__init__.read_gcvs` function at it's location.
+and point the :func:`~pygcvs.__init__.read_gcvs` function at its location.
 The function returns a generator which yields a single star data dictionary
 at a time. See below::
 
