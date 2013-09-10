@@ -34,7 +34,7 @@ at a time. See below::
     V0515 VUL
     V0516 VUL
 
-See :doc:`usage` for more usage examples.
+See :doc:`usage` for description of dictionary fields and more usage examples.
 
 Contents
 ========
