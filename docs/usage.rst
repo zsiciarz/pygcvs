@@ -16,6 +16,19 @@ The following fields are available:
     Variable star designation, such as *RR LYR*, *V838 MON* etc. The name
     is always normalized to upper case.
 
+``ra``
+    Right ascension of the variable star in J2000.0 epoch, eg. ``'20:50:12.7'``.
+
+``dec``
+    Declination of the variable star in J2000.0 epoch, eg. ``'+03:39:08'``.
+
+.. note::
+
+   The coordinates are returned as strings compatible with the popular
+   `PyEphem <http://rhodesmill.org/pyephem/index.html>`_ astronomy package.
+   For example, ``ra`` field can be passed directly to ``pyephem.hours``
+   function.
+
 ``variable_type``
     Type of variability, for example *M* for Mira-like pulsating red giants.
     This value is literal as it appears in the GCVS, meaning that uncertain
