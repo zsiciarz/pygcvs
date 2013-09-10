@@ -11,6 +11,10 @@ disk. If you have the data in some other form, you can pass it directly
 to the :class:`~pygcvs.parser.GcvsParser`, provided the data source supports
 the iterator protocol.
 
+For example, when using `requests <http://python-requests.org/>`_, the
+response object has a ``iter_lines`` method which, well, iterates over the
+lines of the response.
+
 .. literalinclude:: ../examples/download_gcvs.py
 
 Visualisations with matplotlib
