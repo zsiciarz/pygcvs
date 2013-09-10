@@ -60,6 +60,15 @@ class GcvsParserTestCase(unittest.TestCase):
         name = self.parser.parse_name(name_str)
         self.assertEqual(name, 'VY AND')
 
+    def test_parse_coordinates(self):
+        """
+        Check that coordinates are parsed to PyEphem-compatible strings.
+        """
+        coords_str = '055510.3+072425 '
+        ra, dec = self.parser.parse_coordinates(coords_str)
+        self.assertEqual(ra, '05:55:10.3')
+        self.assertEqual(dec, '+07:24:25')
+
     def test_parse_epoch(self):
         """
         Check that epoch has 24... prefix.
