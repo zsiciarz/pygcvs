@@ -20,12 +20,15 @@ def get_version():
 __version__ = get_version()
 
 
-def read_gcvs(fp):
+def read_gcvs(filename):
     """
-    Reads variable star data in `GCVS format`_ from a file-like object.
+    Reads variable star data in `GCVS format`_.
+
+    :param filename: path to GCVS data file (usually ``iii.dat``)
 
     .. _`GCVS format`: http://www.sai.msu.su/gcvs/gcvs/iii/html/
     """
-    parser = GcvsParser(fp)
-    for star in parser:
-        yield star
+    with open(filename, 'rb') as fp:
+        parser = GcvsParser(fp)
+        for star in parser:
+            yield star
