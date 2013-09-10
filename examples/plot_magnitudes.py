@@ -19,11 +19,10 @@ if __name__ == '__main__':
     else:
         min_magnitudes = []
         max_magnitudes = []
-        with open(gcvs_file, 'rb') as fp:
-            for star in read_gcvs(fp):
-                if star['min_magnitude'] and star['max_magnitude']:
-                    min_magnitudes.append(star['min_magnitude'])
-                    max_magnitudes.append(star['max_magnitude'])
+        for star in read_gcvs(gcvs_file):
+            if star['min_magnitude'] and star['max_magnitude']:
+                min_magnitudes.append(star['min_magnitude'])
+                max_magnitudes.append(star['max_magnitude'])
         plot.title('GCVS variable star magnitudes')
         plot.plot(min_magnitudes, max_magnitudes, 'ro')
         plot.xlabel('Min magnitude')

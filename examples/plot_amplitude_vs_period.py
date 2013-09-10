@@ -19,11 +19,10 @@ if __name__ == '__main__':
     else:
         periods = []
         amplitudes = []
-        with open(gcvs_file, 'rb') as fp:
-            for star in read_gcvs(fp):
-                if star['period'] and star['min_magnitude'] and star['max_magnitude']:
-                    periods.append(star['period'])
-                    amplitudes.append(star['min_magnitude'] - star['max_magnitude'])
+        for star in read_gcvs(gcvs_file):
+            if star['period'] and star['min_magnitude'] and star['max_magnitude']:
+                periods.append(star['period'])
+                amplitudes.append(star['min_magnitude'] - star['max_magnitude'])
         plot.title('GCVS variable stars amplitudes')
         plot.semilogx(periods, amplitudes, 'ro')
         plot.xlabel('Period [days]')

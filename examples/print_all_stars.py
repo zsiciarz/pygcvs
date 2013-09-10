@@ -17,6 +17,5 @@ if __name__ == '__main__':
     except IndexError:
         print('Usage: python print_all_stars.py <path to iii.dat>')
     else:
-        with open(gcvs_file, 'rb') as fp:
-            for star in read_gcvs(fp):
-                print(star)
+        for star in read_gcvs(gcvs_file):
+            print(star)
