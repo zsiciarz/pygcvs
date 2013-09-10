@@ -71,6 +71,14 @@ class GcvsParser(object):
         name = name_str[:9]
         return ' '.join(name.split()).upper()
 
+    def parse_coordinates(self, coords_str):
+        """
+        Returns a pair of PyEphem-compatible coordinate strings (Ra, Dec).
+        """
+        ra = '%s:%s:%s' % (coords_str[0:2], coords_str[2:4], coords_str[4:8])
+        dec = '%s:%s:%s' % (coords_str[8:11], coords_str[11:13], coords_str[13:15])
+        return (ra, dec)
+
     def parse_magnitude(self, magnitude_str):
         """
         Converts magnitude field to a float value, or ``None`` if GCVS does
