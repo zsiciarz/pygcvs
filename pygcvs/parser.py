@@ -26,6 +26,8 @@ class GcvsParser(object):
     def __init__(self, fp):
         """
         Creates the parser and feeds it a file-like object.
+
+        :param fp: a file-like object or a generator yielding strings
         """
         self.reader = csv.reader(fp, delimiter=str('|'))
         # skip two initial lines
