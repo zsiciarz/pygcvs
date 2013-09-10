@@ -108,6 +108,8 @@ class GcvsParserTestCase(unittest.TestCase):
         row = "320031 |TX    Del *|205012.7+033908 |CWB:      |  8.84   |   9.54     |            |V |42947.009   |     |     6.165907       |33   |G0-G5            |08632 08953|".split('|')
         data = self.parser.row_to_dict(row)
         self.assertEqual(data['name'], 'TX DEL')
+        self.assertEqual(data['ra'], '20:50:12.7')
+        self.assertEqual(data['dec'], '+03:39:08')
         self.assertEqual(data['variable_type'], 'CWB:')
         self.assertAlmostEqual(data['epoch'], 2442947.009)
         self.assertAlmostEqual(data['period'], 6.165907)
