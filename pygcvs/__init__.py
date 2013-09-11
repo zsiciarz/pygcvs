@@ -2,6 +2,11 @@ from __future__ import unicode_literals, print_function
 
 from .parser import GcvsParser
 
+try:
+    import ephem
+except ImportError:
+    ephem = None
+
 
 __version_info__ = (0, 1, 0, 'dev', 0)
 
@@ -32,3 +37,19 @@ def read_gcvs(filename):
         parser = GcvsParser(fp)
         for star in parser:
             yield star
+
+
+def dict_to_body(star_dict):
+    """
+    Converts a dictionary of variable star data to a `Body` instance.
+
+    Requires `PyEphem <http://rhodesmill.org/pyephem/>`_ to be installed.
+    """
+    if ephem is None:
+        raise NotImplementedError("Please install PyEphem in order to use dict_to_body.")
+    body = ephem.FixedBody()
+    body.name = star_dict['name']
+    body._ra = ephem.hours(str(star_dict['ra']))
+    body._dec = ephem.degrees(str(star_dict['dec']))
+    body._epoch = ephem.J2000
+    return body
