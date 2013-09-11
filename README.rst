@@ -2,6 +2,15 @@
 pygcvs
 ======
 
+.. image:: https://pypip.in/v/pygcvs/badge.png
+    :target: https://crate.io/packages/pygcvs/
+    :alt: Latest PyPI version
+
+.. image:: https://pypip.in/d/pygcvs/badge.png
+    :target: https://crate.io/packages/pygcvs/
+    :alt: Number of PyPI downloads
+
+
 A Python library for reading variable star data from the
 `General Catalog of Variable Stars <http://www.sai.msu.su/gcvs/gcvs/iii/html/>`_.
 
