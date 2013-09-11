@@ -58,6 +58,17 @@ The following fields are available:
 ``period``
     Variability period in days, or `None` if unspecified or not periodic.
 
+PyEphem compatibility
+=====================
+
+If you have `PyEphem <http://rhodesmill.org/pyephem/index.html>`_ installed,
+you can use the :func:`~pygcvs.__init__.dict_to_body` function to convert
+star data to a `Body` instance more suitable for various astronomical
+computations. See the example below, which checks if **TX Del** (a Type II
+cepheid variable) is currently visible in Warsaw.`
+
+.. literalinclude:: ../examples/check_visibility.py
+
 Using GcvsParser directly
 =========================
 
