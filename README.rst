@@ -10,6 +10,8 @@ pygcvs
     :target: https://crate.io/packages/pygcvs/
     :alt: Number of PyPI downloads
 
+.. image:: https://travis-ci.org/zsiciarz/pygcvs.png?branch=master
+    :target: https://travis-ci.org/zsiciarz/pygcvs
 
 A Python library for reading variable star data from the
 `General Catalog of Variable Stars <http://www.sai.msu.su/gcvs/gcvs/iii/html/>`_.
