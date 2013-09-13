@@ -43,6 +43,14 @@ class GcvsParserTestCase(unittest.TestCase):
         magnitude, symbol = self.parser.parse_magnitude(magnitude_str)
         self.assertIsNone(magnitude)
 
+    def test_parse_constellation(self):
+        """
+        Check that a constellation number is parsed into abbreviation.
+        """
+        constellation_str = '590102 '
+        constellation = self.parser.parse_constellation(constellation_str)
+        self.assertEqual(constellation, 'OPH')
+
     def test_parse_name_spaces(self):
         """
         Check that multiple spaces between star name and constellation name
