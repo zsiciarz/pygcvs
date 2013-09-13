@@ -5,6 +5,97 @@ import logging
 
 logger = logging.getLogger(__name__)
 
+CONSTELLATIONS = {
+    '01': 'AND',
+    '02': 'ANT',
+    '03': 'APS',
+    '04': 'AQR',
+    '05': 'AQL',
+    '06': 'ARA',
+    '07': 'ARI',
+    '08': 'AUR',
+    '09': 'BOO',
+    '10': 'CAE',
+    '11': 'CAM',
+    '12': 'CNC',
+    '13': 'CVN',
+    '14': 'CMA',
+    '15': 'CMI',
+    '16': 'CAP',
+    '17': 'CAR',
+    '18': 'CAS',
+    '19': 'CEN',
+    '20': 'CEP',
+    '21': 'CET',
+    '22': 'CHA',
+    '23': 'CIR',
+    '24': 'COL',
+    '25': 'COM',
+    '26': 'CRA',
+    '27': 'CRB',
+    '28': 'CRV',
+    '29': 'CRT',
+    '30': 'CRU',
+    '31': 'CYG',
+    '32': 'DEL',
+    '33': 'DOR',
+    '34': 'DRA',
+    '35': 'EQU',
+    '36': 'ERI',
+    '37': 'FOR',
+    '38': 'GEM',
+    '39': 'GRU',
+    '40': 'HER',
+    '41': 'HOR',
+    '42': 'HYA',
+    '43': 'HYI',
+    '44': 'IND',
+    '45': 'LAC',
+    '46': 'LEO',
+    '47': 'LMI',
+    '48': 'LEP',
+    '49': 'LIB',
+    '50': 'LUP',
+    '51': 'LYN',
+    '52': 'LYR',
+    '53': 'MEN',
+    '54': 'MIC',
+    '55': 'MON',
+    '56': 'MUS',
+    '57': 'NOR',
+    '58': 'OCT',
+    '59': 'OPH',
+    '60': 'ORI',
+    '61': 'PAV',
+    '62': 'PEG',
+    '63': 'PER',
+    '64': 'PHE',
+    '65': 'PIC',
+    '66': 'PSC',
+    '67': 'PSA',
+    '68': 'PUP',
+    '69': 'PYX',
+    '70': 'RET',
+    '71': 'SGE',
+    '72': 'SGR',
+    '73': 'SCO',
+    '74': 'SCL',
+    '75': 'SCT',
+    '76': 'SER',
+    '77': 'SEX',
+    '78': 'TAU',
+    '79': 'TEL',
+    '80': 'TRI',
+    '81': 'TRA',
+    '82': 'TUC',
+    '83': 'UMA',
+    '84': 'UMI',
+    '85': 'VEL',
+    '86': 'VIR',
+    '87': 'VOL',
+    '88': 'VUL',
+}
+
 
 class GcvsParser(object):
     """
@@ -48,6 +139,7 @@ class GcvsParser(object):
         """
         Converts a raw GCVS record to a dictionary of star data.
         """
+        constellation = self.parse_constellation(row[0])
         name = self.parse_name(row[1])
         ra, dec = self.parse_coordinates(row[2])
         variable_type = row[3].strip()
@@ -59,6 +151,7 @@ class GcvsParser(object):
         epoch = self.parse_epoch(row[8])
         period = self.parse_period(row[10])
         return {
+            'constellation': constellation,
             'name': name,
             'ra': ra,
             'dec': dec,
@@ -68,6 +161,10 @@ class GcvsParser(object):
             'epoch': epoch,
             'period': period,
         }
+
+    def parse_constellation(self, constellation_str):
+        constellation_num = constellation_str[:2]
+        return CONSTELLATIONS[constellation_num]
 
     def parse_name(self, name_str):
         """
