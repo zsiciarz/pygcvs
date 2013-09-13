@@ -12,6 +12,10 @@ as name, location, min/max brightness, variability type etc.
 
 The following fields are available:
 
+``constellation``
+    A three-letter abbreviation of constellation in which the star can be
+    found, normalized to upper case. For example *OPH*, *CRB* etc.
+
 ``name``
     Variable star designation, such as *RR LYR*, *V838 MON* etc. The name
     is always normalized to upper case.
