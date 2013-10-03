@@ -13,6 +13,9 @@ pygcvs
 .. image:: https://travis-ci.org/zsiciarz/pygcvs.png?branch=master
     :target: https://travis-ci.org/zsiciarz/pygcvs
 
+.. image:: https://coveralls.io/repos/zsiciarz/pygcvs/badge.png?branch=master
+    :target: https://coveralls.io/r/zsiciarz/pygcvs?branch=master
+
 A Python library for reading variable star data from the
 `General Catalog of Variable Stars <http://www.sai.msu.su/gcvs/gcvs/iii/html/>`_.
 
