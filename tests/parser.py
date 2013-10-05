@@ -129,3 +129,10 @@ class GcvsParserTestCase(unittest.TestCase):
         row = "869001 |alf   Vir *|132511.6-110941 |ELL+BCEP  |  0.95   |(  0.10    )|(  0.08    )|V |19530.49    |     |     4.014604       |     |B1III-IV+B2V     |04627 BD   |".split('|')
         data = self.parser.row_to_dict(row)
         self.assertAlmostEqual(data['min_magnitude'], 1.05)
+
+    def test_iter_single_row(self):
+        file_contents = "\n\n010001 |R     And *|002402.0+383437 |M         |  5.8    |  15.2      |            |V |53820.      |     |   409.2            |38   |S3,5e-S8,8e(M7e) |HIP   00002|"
+        fp = StringIO(file_contents)
+        parser = GcvsParser(fp)
+        rows = [row for row in parser]
+        self.assertEqual(len(rows), 1)
