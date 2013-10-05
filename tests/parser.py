@@ -131,6 +131,9 @@ class GcvsParserTestCase(unittest.TestCase):
         self.assertAlmostEqual(data['min_magnitude'], 1.05)
 
     def test_iter_single_row(self):
+        """
+        Check that the following file should result in a single row of data.
+        """
         file_contents = "\n\n010001 |R     And *|002402.0+383437 |M         |  5.8    |  15.2      |            |V |53820.      |     |   409.2            |38   |S3,5e-S8,8e(M7e) |HIP   00002|"
         fp = StringIO(file_contents)
         parser = GcvsParser(fp)
@@ -138,6 +141,9 @@ class GcvsParserTestCase(unittest.TestCase):
         self.assertEqual(len(rows), 1)
 
     def test_iter_row_too_short(self):
+        """
+        Too few fields in a row exclude that row from iteration.
+        """
         file_contents = "\n\n010001 |R     And *|002402.0+383437 |M         |  5.8    |  15.2      |            |V |53820.      |     |   409.2            |"
         fp = StringIO(file_contents)
         parser = GcvsParser(fp)
