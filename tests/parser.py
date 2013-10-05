@@ -136,3 +136,10 @@ class GcvsParserTestCase(unittest.TestCase):
         parser = GcvsParser(fp)
         rows = [row for row in parser]
         self.assertEqual(len(rows), 1)
+
+    def test_iter_row_too_short(self):
+        file_contents = "\n\n010001 |R     And *|002402.0+383437 |M         |  5.8    |  15.2      |            |V |53820.      |     |   409.2            |"
+        fp = StringIO(file_contents)
+        parser = GcvsParser(fp)
+        rows = [row for row in parser]
+        self.assertEqual(len(rows), 0)
