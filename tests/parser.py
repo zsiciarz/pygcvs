@@ -149,3 +149,15 @@ class GcvsParserTestCase(unittest.TestCase):
         parser = GcvsParser(fp)
         rows = [row for row in parser]
         self.assertEqual(len(rows), 0)
+
+    def test_iter_row_exception(self):
+        """
+        Exception raised when parsing a row excludes that row from iteration.
+
+        (XXX and ZZZZ are not valid floating point values for magnitude.)
+        """
+        file_contents = "\n\n010001 |R     And *|002402.0+383437 |M         |  XXX    |  ZZZZ      |            |V |53820.      |     |   409.2            |38   |S3,5e-S8,8e(M7e) |HIP   00002|"
+        fp = StringIO(file_contents)
+        parser = GcvsParser(fp)
+        rows = [row for row in parser]
+        self.assertEqual(len(rows), 0)
