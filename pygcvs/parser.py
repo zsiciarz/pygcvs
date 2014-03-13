@@ -176,7 +176,12 @@ class GcvsParser(object):
     def parse_coordinates(self, coords_str):
         """
         Returns a pair of PyEphem-compatible coordinate strings (Ra, Dec).
+
+        If the star has no coordinates in GCVS (there are such cases), a pair
+        of None values is returned.
         """
+        if coords_str.strip() == '':
+            return (None, None)
         ra = '%s:%s:%s' % (coords_str[0:2], coords_str[2:4], coords_str[4:8])
         dec = '%s:%s:%s' % (coords_str[8:11], coords_str[11:13], coords_str[13:15])
         return (ra, dec)
