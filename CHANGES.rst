@@ -2,6 +2,11 @@
 Changelog
 =========
 
+0.1.3
+=====
+
+* fixed reading empty coordinates
+
 0.1.2
 =====
 
