@@ -77,6 +77,15 @@ class GcvsParserTestCase(unittest.TestCase):
         self.assertEqual(ra, '05:55:10.3')
         self.assertEqual(dec, '+07:24:25')
 
+    def test_parse_empty_coordinates(self):
+        """
+        Check that empty coordinates parse to None values.
+        """
+        coords_str = '                '
+        ra, dec = self.parser.parse_coordinates(coords_str)
+        self.assertIsNone(ra)
+        self.assertIsNone(dec)
+
     def test_parse_epoch(self):
         """
         Check that epoch has 24... prefix.
