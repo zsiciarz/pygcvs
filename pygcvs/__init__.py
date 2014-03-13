@@ -8,7 +8,7 @@ except ImportError:
     ephem = None
 
 
-__version_info__ = (0, 1, 2, 'final', 0)
+__version_info__ = (0, 1, 3, 'final', 0)
 
 
 def get_version():
