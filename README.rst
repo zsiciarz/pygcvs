@@ -2,12 +2,12 @@
 pygcvs
 ======
 
-.. image:: https://pypip.in/v/pygcvs/badge.png
-    :target: https://crate.io/packages/pygcvs/
+.. image:: https://pypip.in/version/pygcvs/badge.png
+    :target: https://pypi.python.org/pypi/pygcvs/
     :alt: Latest PyPI version
 
-.. image:: https://pypip.in/d/pygcvs/badge.png
-    :target: https://crate.io/packages/pygcvs/
+.. image:: https://pypip.in/download/pygcvs/badge.png
+    :target: https://pypi.python.org/pypi/pygcvs/
     :alt: Number of PyPI downloads
 
 .. image:: https://travis-ci.org/zsiciarz/pygcvs.png?branch=master
