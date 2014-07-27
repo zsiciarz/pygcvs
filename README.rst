@@ -60,6 +60,7 @@ Resources
 
  * `Documentation <http://pygcvs.rtfd.org>`_
  * `Issue tracker <https://github.com/zsiciarz/pygcvs/issues>`_
+ * `CI server <https://travis-ci.org/zsiciarz/pygcvs>`_
 
 Author
 ------
