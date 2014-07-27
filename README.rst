@@ -2,15 +2,27 @@
 pygcvs
 ======
 
-.. image:: https://pypip.in/version/pygcvs/badge.png
+.. image:: https://requires.io/github/zsiciarz/pygcvs/requirements.png?branch=master
+    :target: https://requires.io/github/zsiciarz/pygcvs/requirements/?branch=master
+    :alt: Requirements Status
+
+.. image:: https://pypip.in/version/pygcvs/badge.svg
     :target: https://pypi.python.org/pypi/pygcvs/
     :alt: Latest PyPI version
 
-.. image:: https://pypip.in/download/pygcvs/badge.png
+.. image:: https://pypip.in/download/pygcvs/badge.svg
     :target: https://pypi.python.org/pypi/pygcvs/
     :alt: Number of PyPI downloads
 
-.. image:: https://travis-ci.org/zsiciarz/pygcvs.png?branch=master
+.. image:: https://pypip.in/py_versions/pygcvs/badge.svg
+    :target: https://pypi.python.org/pypi/pygcvs/
+    :alt: Supported Python versions
+
+.. image:: https://pypip.in/wheel/pygcvs/badge.svg
+    :target: https://pypi.python.org/pypi/pygcvs/
+    :alt: Wheel Status
+
+.. image:: https://travis-ci.org/zsiciarz/pygcvs.svg?branch=master
     :target: https://travis-ci.org/zsiciarz/pygcvs
 
 .. image:: https://coveralls.io/repos/zsiciarz/pygcvs/badge.png?branch=master
