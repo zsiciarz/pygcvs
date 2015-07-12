@@ -6,19 +6,19 @@ pygcvs
     :target: https://requires.io/github/zsiciarz/pygcvs/requirements/?branch=master
     :alt: Requirements Status
 
-.. image:: https://pypip.in/version/pygcvs/badge.svg
+.. image:: https://img.shields.io/pypi/v/pygcvs.svg
     :target: https://pypi.python.org/pypi/pygcvs/
     :alt: Latest PyPI version
 
-.. image:: https://pypip.in/download/pygcvs/badge.svg
+.. image:: https://img.shields.io/pypi/dm/pygcvs.svg
     :target: https://pypi.python.org/pypi/pygcvs/
     :alt: Number of PyPI downloads
 
-.. image:: https://pypip.in/py_versions/pygcvs/badge.svg
+.. image:: https://img.shields.io/pypi/pyversions/pygcvs.svg
     :target: https://pypi.python.org/pypi/pygcvs/
     :alt: Supported Python versions
 
-.. image:: https://pypip.in/wheel/pygcvs/badge.svg
+.. image:: https://img.shields.io/pypi/wheel/pygcvs.svg
     :target: https://pypi.python.org/pypi/pygcvs/
     :alt: Wheel Status
 
