@@ -2,6 +2,13 @@
 Changelog
 =========
 
+1.0.0
+=====
+
+* first **Python 3-only** release!
+* moved helper functions to pygcvs.helpers module
+* fixed parsing uncertain epochs and periods
+
 0.1.4
 =====
 
