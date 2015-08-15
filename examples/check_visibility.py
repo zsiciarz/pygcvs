@@ -1,5 +1,3 @@
-from __future__ import unicode_literals, print_function
-
 """
 Check if TX Del is visible in Warsaw at the moment.
 """

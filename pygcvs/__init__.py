@@ -1,5 +1,3 @@
-from __future__ import unicode_literals, print_function
-
 from .parser import GcvsParser
 from .helpers import dict_to_body, read_gcvs
 

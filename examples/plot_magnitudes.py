@@ -1,5 +1,3 @@
-from __future__ import unicode_literals, print_function
-
 """
 Visualisation of maximum/minimum magnitude for GCVS stars.
 """

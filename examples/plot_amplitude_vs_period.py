@@ -1,5 +1,3 @@
-from __future__ import unicode_literals, print_function
-
 """
 Visualisation of brightness amplitude vs variability period.
 """

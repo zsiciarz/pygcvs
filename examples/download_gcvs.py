@@ -1,5 +1,3 @@
-from __future__ import unicode_literals, print_function
-
 """
 An example of directly using the parser to read downloaded GCVS data.
 """
