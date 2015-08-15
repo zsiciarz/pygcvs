@@ -17,7 +17,7 @@ setup(
     license='MIT',
     packages=find_packages(exclude=['tests']),
     include_package_data=True,
-    tests_require=['pytest', 'six'],
+    tests_require=['pytest'],
     platforms='any',
     classifiers=[
         'Development Status :: 5 - Production/Stable',
