@@ -99,6 +99,14 @@ class GcvsParserTestCase(unittest.TestCase):
         epoch = self.parser.parse_epoch(epoch_str)
         self.assertIsNone(epoch)
 
+    def test_parse_uncertain_epoch(self):
+        """
+        Check that the colon after uncertain epoch is ignored.
+        """
+        epoch_str = '52194.   :  '
+        epoch = self.parser.parse_epoch(epoch_str)
+        self.assertAlmostEqual(epoch, 2452194.0)
+
     def test_parse_period(self):
         """
         Check that the period field parses correctly.
@@ -114,6 +122,14 @@ class GcvsParserTestCase(unittest.TestCase):
         period_str = '                    '
         period = self.parser.parse_period(period_str)
         self.assertIsNone(period)
+
+    def test_parse_bracketed_period(self):
+        """
+        Check that brackets around period are ignored.
+        """
+        period_str = '  ( 18.       )     '
+        period = self.parser.parse_period(period_str)
+        self.assertAlmostEqual(period, 18.0)
 
     def test_row_to_dict_simple(self):
         """

@@ -95,6 +95,9 @@ CONSTELLATIONS = {
 }
 
 
+TRANSLATION_MAP = {ord(ch): None for ch in '():/'}
+
+
 class GcvsParser(object):
     """
     A parser for GCVS data format.
@@ -201,7 +204,7 @@ class GcvsParser(object):
         Converts epoch field to a float value (adding 24... prefix), or
         ``None`` if there is no epoch in GCVS record.
         """
-        epoch = epoch_str[:10].strip()
+        epoch = epoch_str.translate(TRANSLATION_MAP)[:10].strip()
         return 2400000.0 + float(epoch) if epoch else None
 
     def parse_period(self, period_str):
@@ -209,5 +212,5 @@ class GcvsParser(object):
         Converts period field to a float value or ``None`` if there is
         no period in GCVS record.
         """
-        period = period_str[1:17].strip()
+        period = period_str.translate(TRANSLATION_MAP)[3:14].strip()
         return float(period) if period else None
