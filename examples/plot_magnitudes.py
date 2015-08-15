@@ -28,4 +28,4 @@ if __name__ == '__main__':
         # invert axes because brightest stars have lowest magnitude value
         plot.gca().invert_xaxis()
         plot.gca().invert_yaxis()
-        plot.show()
+        plot.savefig('magnitudes.png')

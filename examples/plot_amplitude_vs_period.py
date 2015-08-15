@@ -25,4 +25,4 @@ if __name__ == '__main__':
         plot.semilogx(periods, amplitudes, 'ro')
         plot.xlabel('Period [days]')
         plot.ylabel('Brightness amplitude [mag]')
-        plot.show()
+        plot.savefig('amplitude_vs_period.png')
