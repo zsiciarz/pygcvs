@@ -2,7 +2,7 @@ from .parser import GcvsParser
 
 try:
     import ephem
-except ImportError:
+except ImportError:  # pragma: no cover
     ephem = None
 
 
@@ -26,7 +26,7 @@ def dict_to_body(star_dict):
 
     Requires `PyEphem <http://rhodesmill.org/pyephem/>`_ to be installed.
     """
-    if ephem is None:
+    if ephem is None:  # pragma: no cover
         raise NotImplementedError("Please install PyEphem in order to use dict_to_body.")
     body = ephem.FixedBody()
     body.name = star_dict['name']
