@@ -2,6 +2,11 @@
 Changelog
 =========
 
+Unreleased
+==========
+
+* Python 3.5 support
+
 1.0.0
 =====
 
