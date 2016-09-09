@@ -1,4 +1,4 @@
-Sphinx==1.4.5
+Sphinx==1.4.6
 coverage==4.2
 ephem==3.7.6.0
 pytest==2.9.2
