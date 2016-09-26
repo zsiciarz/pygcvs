@@ -1,5 +1,5 @@
 Sphinx==1.4.6
 coverage==4.2
 ephem==3.7.6.0
-pytest==2.9.2
+pytest==3.0.2
 pytest-cov==2.3.0
