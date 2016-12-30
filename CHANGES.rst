@@ -5,7 +5,12 @@ Changelog
 Unreleased
 ==========
 
-* Python 3.5 support
+* none yet
+
+1.1.0
+=====
+
+* Python 3.5 and 3.6 support
 
 1.0.0
 =====

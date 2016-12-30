@@ -4,7 +4,7 @@ from .helpers import dict_to_body, read_gcvs
 __all__ = ['GcvsParser', 'dict_to_body', 'read_gcvs']
 
 
-__version_info__ = (1, 0, 0, 'final', 0)
+__version_info__ = (1, 1, 0, 'final', 0)
 
 
 def get_version():
